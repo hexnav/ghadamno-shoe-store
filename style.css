@@ -1,0 +1,425 @@
+/* ---------- متغیرها و تنظیمات پایه ---------- */
+:root {
+  --color-bg: #2d68c4;
+  --color-nav: #1f2937;
+  --color-accent: #38bdf8;
+  --color-primary: blueviolet;
+  --menu-pad: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top: 80px; /* جلوگیری از رفتن عنوان بخش‌ها زیر نوار منو */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background-color: var(--color-bg);
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* کانتینر مشترک: محتوای همه‌ی بخش‌ها وسط و با عرض ثابت */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* ---------- نوار ناوبری ---------- */
+/* sticky باید روی header باشد، چون والدِ navbar همان است */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 0 24px;
+  background: var(--color-nav);
+  border-radius: 0 0 10px 10px;
+}
+
+.logo img{
+  width: 70px;
+  height: 70px;
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.menu a {
+  position: relative;
+  display: block;
+  padding: 10px var(--menu-pad);
+  color: #d1d5db;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.3s;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  color: #fff;
+}
+
+.menu a:hover::after,
+.menu a:focus-visible::after {
+  width: calc(100% - 2 * var(--menu-pad));
+}
+
+.menu a:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- بخش هیرو ---------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 60px 24px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  margin-bottom: 16px;
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.hero-text {
+  max-width: 45ch;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.9;
+  color: #fff;
+}
+
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+  object-fit: contain;
+  user-select: none;
+}
+
+/* ---------- عنوان‌های مشترک بخش‌ها ---------- */
+.section-title {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.section-subtitle {
+  margin-bottom: 30px;
+  color: cadetblue;
+}
+
+.section-text {
+  max-width: 60ch;
+  color: #fff;
+}
+
+/* ---------- بخش محصولات ---------- */
+.products {
+  padding: 60px 0;
+  background-color: var(--color-nav);
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;          /* در موبایل کارت‌ها می‌روند خط بعد */
+  justify-content: center;
+  gap: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  min-height: 320px;
+  background-color: #27272a;
+  border: 0.5px solid white;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(200, 255, 0, 0.18);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+
+
+.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px;
+}
+
+
+/* یک استایل مشترک برای همه‌ی کارت‌ها (به‌جای Card-Details-1 تا 4) */
+.card-title {
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: whitesmoke;
+}
+
+.card-price {
+  margin-bottom: 17px;
+  text-align: center;
+  color: yellow;
+}
+
+/* ---------- دکمه سفارش ---------- */
+.order-button {
+  margin-top: auto;         /* دکمه همیشه ته کارت می‌ماند */
+  width: 100%;
+  padding: 10px;
+  background-color: #c8ff00;
+  color: #222;
+  font-family: inherit;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.order-button:hover {
+  color: white;
+  background-color: blue;
+  transform: translateY(-5px);
+}
+
+.order-button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ---------- بخش درباره ما ---------- */
+.about {
+  padding: 60px 0;
+  background-color: rgb(22, 38, 38);
+}
+
+.about-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-content {
+  flex: 1 1 360px;
+}
+
+.about-text {
+  max-width: 60ch;
+  line-height: 1.9;
+  color: #9ca3af;
+}
+
+.about-stats {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-bg);
+}
+
+.stat-label {
+  color: #fff;
+}
+/* ---------- بخش خدمات ---------- */
+
+.services{
+  background-color: var(--color-nav);
+  padding: 20px 0px 20px 0px;
+
+}
+
+.services-title{
+  margin-right: 12%;
+  margin-bottom: 10px;
+  color: var(--color-accent);
+}
+
+.services-text{
+  color: var(--color-accent);
+  margin-right: 12%;
+}
+
+input,
+textarea {
+  margin-right: 11.5%;
+  margin-top: 20px;
+  padding: 10px;
+  width: 30%;
+  border:none;
+  border-radius: 10px;
+  background-color:rgb(22, 38, 38) ;
+  color: white;
+}
+
+textarea{
+  height: 100px;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color: whitesmoke;
+}
+
+.services-button{
+  border-radius: 10px;
+  border: none;
+  background-color:blue;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-right: 11.5%;
+  width: 10%;
+  margin-top: 10px;
+  padding:10px;
+}
+
+/* ---------- بخش تماس ---------- */
+
+footer {
+    background: #162626;
+    color: #9ca3af;
+    text-align: center;
+    padding: 24px;
+}
+
+/* ---------- دکمه ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #fff;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- ریسپانسیو ---------- */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 12px;
+  }
+
+  .menu {
+    gap: 0;
+  }
+
+  .menu a {
+    --menu-pad: 8px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 16px;
+  }
+
+  .hero-text {
+    margin-inline: auto;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    user-select: none;
+  }
+
+  .container {
+    padding-inline: 16px;
+  }
+
+  .products,
+  .about,
+  .services,
+  .contact {
+    padding: 40px 0;
+  }
+}

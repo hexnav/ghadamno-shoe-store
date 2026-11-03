@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="کفش‌های روزمره و ورزشی با ضمانت تعویض سایز و تحویل دو روزه">
+    <link rel="stylesheet" href="style.css">
+    <title>فروشگاه کفش | خانه</title>
+</head>
+<body>
+
+    <!-- sticky روی header است تا در تمام صفحه چسبیده بماند -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="منوی اصلی">
+            <a href="#home" class="logo"><img src="image/logo.webp" alt="logo"></a>
+            <ul class="menu">
+                <li><a href="#home">خانه</a></li>
+                <li><a href="#products">محصولات</a></li>
+                <li><a href="#about">درباره ما</a></li>
+                <li><a href="#services">تماس</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ========== هیرو ========== -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">کفشی که هر قدمش راحت است</h1>
+                <p class="hero-text">
+                    کفش‌های روزمره و ورزشی با ضمانت تعویض سایز. سفارش بدهید، دو روزه درِ خانه تحویل بگیرید.
+                </p>
+                <a href="#products" class="btn">مشاهده محصولات</a>
+            </div>
+            <img
+                class="hero-image"
+                src="image/img.webp"
+                alt="کفش ورزشی راحت"
+                width="600"
+                height="400">
+        </section>
+
+        <!-- ========== محصولات ========== -->
+        <section class="products" id="products">
+            <div class="container">
+                <h2 class="section-title">محصولات</h2>
+                <p class="section-subtitle">چهار مدل پرفروش این ماه</p>
+
+                <div class="card-container">
+                    <article class="card">
+                        <img class="card-img" src="image/1334-no-3-1.webp" alt="کتانی سفید یک‌دست با زیره حجیم" loading="lazy">
+                        <div class="card-body">
+                            <h3 class="card-title">کتانی سفید یک‌دست با زیره حجیم</h3>
+                            <p class="card-price">۷٬۲۰۰٬۰۰۰ تومان</p>
+                            <button type="button" class="order-button">ثبت سفارش</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="image/3544-no-1.webp" alt="کفش سفید با پنل طوسی در پاشنه" loading="lazy">
+                        <div class="card-body">
+                            <h3 class="card-title">کفش سفید با پنل طوسی در پاشنه</h3>
+                            <p class="card-price">۶٬۰۰۰٬۰۰۰ تومان</p>
+                            <button type="button" class="order-button">ثبت سفارش</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img class="card-img" src="image/images.jpg" alt="کتانی سفید با جزئیات مشکی" loading="lazy">
+                        <div class="card-body num1">
+                            <h3 class="card-title">  کتانی سفید با جزئیات مشکی و بند دار</h3>
+                            <p class="card-price">۸٬۴۰۰٬۰۰۰ تومان</p>
+                            <button type="button" class="order-button">ثبت سفارش</button>
+                        </div>
+                    </article>
+
+                    <article class="card">
+
+                        <img class="card-img" src="image/shoe-4.jpg" alt="کتانی سفید با جزئیات خاکستری" loading="lazy">
+                        <div class="card-body">
+                            <h3 class="card-title">کتانی سفید با جزئیات خاکستری</h3>
+                            <p class="card-price">۷٬۲۰۰٬۰۰۰ تومان</p>
+                            <button type="button" class="order-button">ثبت سفارش</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== درباره ما ========== -->
+<section class="about" id="about">
+    <div class="container about-inner">
+        <div class="about-content">
+            <h2 class="section-title">درباره ما</h2>
+            <p class="about-text">
+                قدم‌نو را چند دوست علاقه‌مند به کفش راه انداختیم. هر مدل را قبل از فروش
+                چند هفته خودمان می‌پوشیم و فقط کفشی را می‌فروشیم که راحت باشد.
+            </p>
+        </div>
+
+        <ul class="about-stats">
+            <li class="stat">
+                <span class="stat-number">۲۰۰۰+</span>
+                <span class="stat-label">مشتری راضی</span>
+            </li>
+            <li class="stat">
+                <span class="stat-number">۴۸</span>
+                <span class="stat-label">مدل کفش</span>
+            </li>
+            <li class="stat">
+                <span class="stat-number">۲ روز</span>
+                <span class="stat-label">تحویل سریع</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+        <!-- ========== خدمات ========== -->
+        <section class="services" id="services">
+            <h1 class="services-title">تماس با ما</h1>
+            <p class="services-text">سؤال درباره سایز یا سفارش دارید؟ پیام بگذارید.</p>
+            <form action="#" class="services-input">
+
+                <input type="text" placeholder="نام شما" required ><br>
+                <input type="email" placeholder="ایمیل"required><br>
+                <textarea placeholder="پیام شما" required></textarea><br>
+                <button type="submit" class="services-button">ارسال پیام</button>
+
+            </form>
+        </section>
+
+        <!-- ========== تماس ========== -->
+        <footer id="contant">© قدم‌نو، نمونه‌کار آموزشی</footer>
+    </main>
+
+</body>
+</html>
